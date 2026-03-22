@@ -8,23 +8,11 @@ const nextConfig = {
     minimumCacheTTL: 31536000
   },
   typescript: {
-    ignoreBuildErrors: true
+    ignoreBuildErrors: false
   },
+
   compiler: {
-    removeConsole: process.env.NODE_ENV === 'production',
-  },
-  async headers() {
-    return [
-      {
-        source: "/:path*",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable"
-          }
-        ]
-      }
-    ];
+    removeConsole: process.env.NODE_ENV === "production"
   }
 };
 
