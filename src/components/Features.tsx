@@ -1,104 +1,36 @@
-import { Brain, BarChart3, LineChart, Globe } from 'lucide-react';
-import { motion } from 'motion/react';
-
 export default function Features() {
-  const features = [
-    {
-      title: 'Crop Prediction',
-      description: 'Our neural networks analyze soil health, historical weather patterns, and genetic data to predict harvests with 98.4% accuracy.',
-      icon: Brain,
-      className: 'md:col-span-2 bg-surface-container-lowest',
-      iconColor: 'text-primary',
-    },
-    {
-      title: 'Field Analysis',
-      description: 'Real-time multispectral imaging and drone telemetry integrated directly into your workflow.',
-      icon: BarChart3,
-      className: 'bg-surface-container-lowest border-l-4 border-primary',
-      iconColor: 'text-primary',
-    },
-    {
-      title: 'Market Intelligence',
-      description: 'Global commodity pricing trends and local supply-demand metrics updated every 60 seconds.',
-      icon: LineChart,
-      className: 'bg-primary text-white shadow-xl shadow-primary/20',
-      iconColor: 'text-primary-fixed',
-      isDark: true,
-    },
-    {
-      title: 'Universal API',
-      description: 'Integrate TerraLogic Forge into your existing irrigation and hardware stack with our lightning-fast GraphQL endpoints.',
-      icon: Globe,
-      className: 'md:col-span-2 bg-gradient-to-br from-primary-container to-primary text-white',
-      iconColor: 'text-primary-fixed',
-      isDark: true,
-      hasCode: true,
-    },
-  ];
-
   return (
-    <section id="features" className="bg-surface-container-low py-24">
+    <section id="features" className="py-24 bg-gray-100">
       <div className="max-w-7xl mx-auto px-6">
+        <h2 className="text-4xl font-black tracking-tight text-emerald-900 mb-12 text-center">Powerful Features</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {features.map((feature, index) => (
-            <motion.div
-              key={feature.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              viewport={{ once: true }}
-              className={`p-10 rounded-xl relative overflow-hidden group border border-outline-variant/10 ${feature.className}`}
-            >
-              <div className="relative z-10 h-full flex flex-col">
-                <feature.icon className={`w-10 h-10 mb-6 ${feature.iconColor}`} />
-                <h3 className={`text-2xl font-bold tracking-tight mb-4 ${feature.isDark ? 'text-white' : 'text-primary'}`}>
-                  {feature.title}
-                </h3>
-                <p className={`text-lg ${feature.isDark ? 'text-white/70' : 'text-on-surface-variant'}`}>
-                  {feature.description}
-                </p>
-
-                {feature.hasCode && (
-                  <div className="mt-8 bg-black/20 backdrop-blur-md p-6 rounded-lg font-mono text-sm text-primary-fixed border border-white/10">
-                    <code className="block">$ forge init --project "napa-valley"</code>
-                    <code className="block text-white/50 mt-2">Connecting to soil sensors...</code>
-                    <code className="block text-primary-fixed-dim mt-2">Yield optimization active.</code>
-                  </div>
-                )}
-
-                {feature.isDark && !feature.hasCode && (
-                  <a href="#" className="mt-auto pt-8 flex items-center gap-2 text-primary-fixed font-bold hover:gap-3 transition-all">
-                    Explore Trends <ArrowUpRight className="w-4 h-4" />
-                  </a>
-                )}
-              </div>
-              {!feature.isDark && (
-                <div className="absolute -right-12 -bottom-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors" />
-              )}
-            </motion.div>
-          ))}
+          <div className="p-10 rounded-xl bg-white md:col-span-2 border border-gray-200">
+            <svg className="w-10 h-10 mb-6 text-emerald-800" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 2a4 4 0 0 1 4 4v1a3 3 0 0 0 3 3v1a4 4 0 0 1-8 0v-1a3 3 0 0 0 3-3V6a4 4 0 0 1 4-4z" /><circle cx="8" cy="10" r="1.5" /><circle cx="16" cy="10" r="1.5" /></svg>
+            <h3 className="text-2xl font-bold text-emerald-900 mb-4">Crop Prediction</h3>
+            <p className="text-gray-600 text-lg">Our neural networks analyze soil health, historical weather patterns, and genetic data to predict harvests with 98.4% accuracy.</p>
+          </div>
+          <div className="p-10 rounded-xl bg-white border-l-4 border-emerald-800">
+            <svg className="w-10 h-10 mb-6 text-emerald-800" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M18 20V10M12 20V4M6 20v-6" strokeLinecap="round" /></svg>
+            <h3 className="text-2xl font-bold text-emerald-900 mb-4">Field Analysis</h3>
+            <p className="text-gray-600 text-lg">Real-time multispectral imaging and drone telemetry integrated directly into your workflow.</p>
+          </div>
+          <div className="p-10 rounded-xl bg-emerald-900 text-white shadow-xl md:col-span-2">
+            <svg className="w-10 h-10 mb-6 text-emerald-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10" /><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
+            <h3 className="text-2xl font-bold mb-4">Market Intelligence</h3>
+            <p className="text-emerald-200 text-lg mb-4">Global commodity pricing trends and local supply-demand metrics updated every 60 seconds.</p>
+            <a href="#" className="inline-flex items-center gap-2 text-emerald-300 font-bold hover:gap-3 transition-all">Explore Trends <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M7 17L17 7M17 7H7M17 7v10" strokeWidth={2} /></svg></a>
+          </div>
+          <div className="p-10 rounded-xl bg-gradient-to-br from-emerald-800 to-emerald-900 text-white">
+            <svg className="w-10 h-10 mb-6 text-emerald-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10" /></svg>
+            <h3 className="text-2xl font-bold mb-4">Universal API</h3>
+            <p className="text-emerald-200 text-lg">Integrate into your existing irrigation and hardware stack with GraphQL endpoints.</p>
+            <div className="mt-6 bg-black/30 backdrop-blur-md p-4 rounded-lg font-mono text-sm text-emerald-300">
+              <div>$ forge init --project &quot;napa-valley&quot;</div>
+              <div className="text-emerald-400/50 mt-1">Connecting to soil sensors...</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-  );
-}
-
-function ArrowUpRight(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <line x1="7" y1="17" x2="17" y2="7" />
-      <polyline points="7 7 17 7 17 17" />
-    </svg>
   );
 }

@@ -1,0 +1,9 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#fcf9f8"/>
+  <rect x="100" y="100" width="1000" height="430" rx="24" fill="#003527"/>
+  <path d="M600 200L800 400H400L600 200Z" fill="#95d3ba"/>
+  <path d="M600 500L400 400H800L600 500Z" fill="#4edea3"/>
+  <rect x="300" y="380" width="600" height="60" rx="12" fill="#b0f0d6"/>
+  <circle cx="600" cy="400" r="50" fill="#003527" stroke="white" stroke-width="6"/>
+  <text x="600" y="600" text-anchor="middle" font-family="Arial" font-size="32" font-weight="bold" fill="#003527">TerraLogic Forge</text>
+</svg>
